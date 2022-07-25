@@ -4,9 +4,10 @@ This repository contains basic python code examples about different methods of d
 
 Current examples
 
-- Linear regression
-    - Simple and multiple, using `scikit-learn` and `statsmodels` libraries.
+- Linear models
+    - Simple and multiple regression, using `scikit-learn` and `statsmodels` libraries.
+    - Generalized linear model Poisson using `scikit-learn`.
 - Classifiers
-    - Evaluation of binary classifiers, using `scikit-learn`
-    - Logistic regression, using `scikit-learn`
+    - Evaluation of binary classifiers, using `scikit-learn`.
+    - Logistic regression, using `scikit-learn`.
 
