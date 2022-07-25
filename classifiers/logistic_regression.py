@@ -47,7 +47,7 @@ Outputs
 
 def logistic_regression_fit_and_predict_skl(X_train, y_train, X_test = None, 
     y_test = None, intercept = True):
-    logreg_fit = lm.LogisticRegression(fit_intercept = intercept).fit(X,y)
+    logreg_fit = lm.LogisticRegression(fit_intercept = intercept).fit(X_train,y_train)
     coef = logreg_fit.coef_
     inter = logreg_fit.intercept_
     pred_train_class = logreg_fit.predict(X_train)
@@ -101,11 +101,3 @@ print('Recall TP / (TP + FN): ', sens)
 print('Negative predicted value TN / (TN + FN): ', npv)
 print('Accuracy (TP + TN) / (TP + TN + FP + FN): ', acc)
 print('F1 Score: ', F1)
-
-## Ayuda para mi
-# predic_prob la primera componente es la probabilidad de que pertenezca a la clase 0
-# y la segunda a la clase 1
-# desicion_function es positiva si pertenece a la clase 1 y negativa a la clase 0.
-# predict me da la clase predicha: será 1 si la decision_function es positiva o si 
-# la probabilidad de la clase 1 es mayor a la de la clase 0.
-# Esto sería equivalente a definir un umbral de 0.5 en la ROC.
