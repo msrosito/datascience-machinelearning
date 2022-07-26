@@ -117,9 +117,6 @@ def read_vars(filename):
         for row in csvreader:
             y_true[i] = row[0]
             y_score[i] = row[1]
-            i += 1
-    
-#    x = x.reshape(-1, 1)
-#    y = y.reshape(-1,1)    
+            i += 1    
     
     return y_true, y_score
