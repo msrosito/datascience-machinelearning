@@ -5,13 +5,9 @@
 # Dataset: https://github.com/rahul-raoniar/Rahul_Raoniar_Blogs
 ################################################################################
 
-import numpy as np
 import sklearn.linear_model as lm
 import statsmodels.api as sm
 from statsmodels.formula.api import logit
-import sklearn.metrics as skm 
-import matplotlib.pyplot as plt
-import csv
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
@@ -68,7 +64,7 @@ def logistic_regression_fit_and_predict_skl(X_train, y_train, X_test = None,
 ################################################################################
 
 output_dir = 'results_classifiers/'
-input_dir = 'data/'
+input_dir = '../data/'
 
 # Read the data
 data = pd.read_csv(input_dir + 'diabetes.csv')
@@ -87,7 +83,7 @@ coef, inter, pred_labels, probabilities = logistic_regression_fit_and_predict_sk
 filename = output_dir + 'ROC_logistic_example.png'
 y_p, M = confusion_matrix_from_scores(y, probabilities.T[1], 0.5)
 M2 = skm.confusion_matrix(y, pred_labels)
-AUC = roc_plot_and_auc(y, probabilities.T[1], filename)
+AUC = roc_plot_and_auc(y, probabilities.T[1], filename, 'Logistic regression')
 pres, sens, spec, npv, acc, F1 = binary_classifier_evaluation(M)
 
 # Report results

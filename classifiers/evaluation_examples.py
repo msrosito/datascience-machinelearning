@@ -11,7 +11,7 @@ from evaluate_classification import *
 ################################################################################
 
 output_dir = 'results_classifiers/'
-input_dir = 'data/'
+input_dir = '../data/'
 
 # Simple example ###############################################################
 filename_out = output_dir + 'simple_example.png'
@@ -24,7 +24,7 @@ scores = np.array([0.1, 0.4, 0.35, 0.8])
 fpr, tpr, thresholds = skm.roc_curve(y, scores)
 
 # Computation of the AUC and plot
-auc = roc_plot_and_auc(y, scores, filename_out)
+auc = roc_plot_and_auc(y, scores, filename_out, 'Example 1')
 
 # Confusion matrix from the scores with a threshold = 0.5
 y_predicted, M = confusion_matrix_from_scores(y, scores, 0.5)
@@ -47,7 +47,7 @@ fpr, tpr, thresholds = skm.roc_curve(y, scores)
 print(fpr, tpr, thresholds)
 
 # Computation of the AUC and plot
-auc = roc_plot_and_auc(y, scores, filename_out)
+auc = roc_plot_and_auc(y, scores, filename_out, 'Random classifier')
 
 # Report area under curve
 print('Area under curve: ', auc)
@@ -63,7 +63,7 @@ y_true, y_score = read_vars(filename_in)
 y_predicted, M = confusion_matrix_from_scores(y_true, y_score, 0.5)
 
 # Compute AUC and plot the ROC curve
-auc = roc_plot_and_auc(y_true, y_score, filename_out)
+auc = roc_plot_and_auc(y_true, y_score, filename_out, 'Example 2')
 
 # Report results
 print('Confusion matrix:', M)

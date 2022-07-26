@@ -81,7 +81,7 @@ Inputs
 Output
     `AUC`: Area under the ROC curve
 """    
-def roc_plot_and_auc(y_true, y_score, filename):
+def roc_plot_and_auc(y_true, y_score, filename, label):
     false_positive_rate, true_positive_rate, thresholds = skm.roc_curve(y_true, y_score)
     auc = skm.roc_auc_score(y_true, y_score)
     plt.plot(false_positive_rate, true_positive_rate, c = 'b', linewidth = 2)
@@ -91,7 +91,7 @@ def roc_plot_and_auc(y_true, y_score, filename):
     fs = 16
     plt.xticks(fontsize = 0.75 * fs)
     plt.yticks(fontsize = 0.75 * fs)
-    plt.title('ROC space', fontsize = fs)
+    plt.title('ROC space '+ str(label), fontsize = fs)
     plt.text(0.2, 0.01, 'AUC: '+ str(round(auc, 3)), fontsize = fs)
     plt.xlabel('False positive rate: FP/(TN + FP)', fontsize = fs)
     plt.ylabel('True positive rate: TP/(TP + FN)', fontsize = fs)
