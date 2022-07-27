@@ -14,6 +14,7 @@ output_dir = 'results_classifiers/'
 input_dir = '../data/'
 
 # Simple example ###############################################################
+print('Classification evaluation of a simple example')
 filename_out = output_dir + 'simple_example.png'
 
 # Definition of variables
@@ -36,6 +37,7 @@ print('Confusion matrix:', M)
 print('Area under curve: ', auc)
 
 # ROC of a random classifier ###################################################
+print('Classification evaluation of a random classifier')
 filename_out = output_dir + 'random_example.png'
 
 # Definition of variables
@@ -53,6 +55,7 @@ auc = roc_plot_and_auc(y, scores, filename_out, 'Random classifier')
 print('Area under curve: ', auc)
 
 # Another example  #############################################################
+print('Classification evaluation of another example')
 filename_in = input_dir + 'data_classification.csv'    
 filename_out = output_dir + 'another_example.png'
 
