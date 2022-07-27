@@ -13,4 +13,5 @@ Current examples
     - Naive Bayes using `scikit-learn`.
     - Convolutional neural network using `tensorflow`. See [here]
     (https://github.com/msrosito/deep-learning-galaxy)
+    - Decision tree using `scikit-learn`
 
