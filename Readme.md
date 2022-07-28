@@ -14,4 +14,6 @@ Current examples
     - Convolutional neural network using `tensorflow`. See [here]
     (https://github.com/msrosito/deep-learning-galaxy)
     - Decision tree using `scikit-learn`
+- Dimensionality reduction
+    - Principal component analysis using `scikit-learn`.
 

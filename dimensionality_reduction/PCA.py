@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 ################################################################################
 
 """
-    principal_components(X):
+    principal_components_skl(X):
 
 Description
     Analysis of principal components of a matrix of features using scikit-learn
@@ -26,7 +26,7 @@ Outputs
     `T`: projection of each observation in the principal components (nobs x nfeatures)
 """   
 
-def principal_components(X):
+def principal_components_skl(X):
     pca = dsl.PCA().fit(X)
     components = pca.components_
     ex_variance = pca.explained_variance_ratio_
@@ -52,7 +52,7 @@ X = X - X.mean(axis = 0)
 print('Correlated bivariate gaussian variables') 
 
 # Compute the principal components
-c, ev, T = principal_components(X)
+c, ev, T = principal_components_skl(X)
 
 # Report results
 
