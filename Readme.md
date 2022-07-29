@@ -16,4 +16,4 @@ Current examples
     - Decision tree using `scikit-learn`
 - Dimensionality reduction
     - Principal component analysis using `scikit-learn`.
-
+    - Comparison bewteen classificaiton of images reduced by PCA and UMAP algorithms.

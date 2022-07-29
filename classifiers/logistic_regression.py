@@ -7,7 +7,6 @@
 
 import sklearn.linear_model as lm
 import statsmodels.api as sm
-from statsmodels.formula.api import logit
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
