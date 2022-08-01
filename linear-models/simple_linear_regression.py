@@ -2,7 +2,7 @@
 # Simple linear regression using sklearn and statsmodels
 #
 # See https://scikit-learn.org/stable/modules/classes.html#module-sklearn.linear_model
-#     https://www.statsmodels.org/stable/index.html
+#     https://www.statsmodels.org/stable/regression.html
 ################################################################################
 
 
@@ -131,8 +131,8 @@ def plot_simple_linear_regression(x, y, beta0, beta1, label, output_dir):
 # Main
 ################################################################################
 
-input_dir = 'data/'
-output_dir = 'results_LR/'
+input_dir = '../data/'
+output_dir = 'resultsLM/'
 filename = input_dir + 'data_example_LR.csv'
 
 # Read explatory and response variables.

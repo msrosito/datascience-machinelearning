@@ -2,7 +2,7 @@
 # Multiple linear regression using sklearn and statsmodels
 #
 # See https://scikit-learn.org/stable/modules/classes.html#module-sklearn.linear_model
-#     https://www.statsmodels.org/stable/index.html
+#     https://www.statsmodels.org/stable/regression.html
 ################################################################################
 
 
@@ -96,15 +96,11 @@ def read_vars(filename):
 # Main
 ################################################################################
 
-input_dir = 'data/'
-output_dir = 'results_LR/'
+input_dir = '../data/'
 filename = input_dir + 'data_example_MLR.csv'
 
 # Read explatory and response variables.
 x, y = read_vars(filename)
-
-print(np.shape(x))
-print(np.shape(y))
 
 # Example with scikit learn ####################################################
 print('Multiple linear regression example (scikit learn)')
@@ -118,7 +114,7 @@ print('Coefficients: ', beta)
 print('R2: ', R2)
 
 # Example with statsmodel ######################################################
-print('Simple linear regression example (statsmodel)')
+print('Multiple linear regression example (statsmodel)')
 
 # Compute simple linear regression and report results
 beta0, beta, R2 = multiple_linear_regression_stm(x, y)

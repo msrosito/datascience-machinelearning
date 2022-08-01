@@ -98,8 +98,8 @@ def plot_poisson_linear_regression(x, y, beta0, beta1, output_dir):
 # Main
 ################################################################################
 
-input_dir = 'data/'
-output_dir = 'results_LR/'
+input_dir = '../data/'
+output_dir = 'resultsLM/'
 filename = input_dir + 'data_example_GLMP.csv'
 
 # Read explatory and response variables.
