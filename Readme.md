@@ -17,5 +17,7 @@ Current examples
 - Dimensionality reduction
     - Principal component analysis using `scikit-learn`.
     - Comparison bewteen classificaiton of images reduced by PCA and UMAP algorithms.
+- Clustering
+    - K-means, DBSCAN, and HBSCAN comparison: times and plots using `scikit-learn`
 - SQL & DB design
     - MySQL examples.

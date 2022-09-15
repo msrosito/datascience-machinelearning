@@ -102,7 +102,7 @@ if not cond1 or not cond2:
 beta = regression_generalized_least_squares_stm(X, y, cov_matrix, intercept = False)
 print(beta)
 
-# Using the formula
+# Using the formula (no intercept)
 
 s = np.linalg.inv(cov_matrix)  
 XXT = np.matmul(X, X.T)
