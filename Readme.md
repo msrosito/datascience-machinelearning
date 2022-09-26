@@ -13,11 +13,18 @@ Current examples
     - Logistic regression using `scikit-learn`.
     - Naive Bayes using `scikit-learn`.
     - Convolutional neural network using `tensorflow`. See [here](https://github.com/msrosito/deep-learning-galaxy)
-    - Decision tree using `scikit-learn`
+    - Decision tree using `scikit-learn`. 
 - Dimensionality reduction
     - Principal component analysis using `scikit-learn`.
     - Comparison bewteen classificaiton of images reduced by PCA and UMAP algorithms.
 - Clustering
     - K-means, DBSCAN, and HBSCAN comparison: times and plots using `scikit-learn`
-- SQL & DB design
-    - MySQL examples.
+- SQL & DB design (MySQL examples)
+    - example1.sql: subqueries, JOIN, GROUP BY, aggregation functions, filtrering, ORDER BY.
+    - example2.sql: subqueries, GROUP BY, aggregation functions, filtrering.
+    - example3.sql: Common Table Expressions (CTE), window functions, filtrering.
+    - example4.sql: reusing calculations, JOIN, GROUP BY, aggregation functions, IF.
+    - example5.sql: EXISTS, filtrering, extract from datetime, subqueries, GROUP BY, aggregation functions.
+- Dataframes (Python pandas)
+    - example1.py: define and read dataframes, access data, add data, dataframe summary.
+    
