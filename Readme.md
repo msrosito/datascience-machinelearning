@@ -27,4 +27,6 @@ Current examples
     - example5.sql: EXISTS, filtrering, extract from datetime, subqueries, GROUP BY, aggregation functions.
 - Dataframes (Python pandas)
     - example1.py: define and read dataframes, access data, add data, dataframe summary.
+    - example2.py: merge, reshape, and concatenate dataframes.
+    - example3.py: filtrer and group data, window functions. 
     
