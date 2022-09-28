@@ -29,4 +29,5 @@ Current examples
     - example1.py: define and read dataframes, access data, add data, dataframe summary.
     - example2.py: merge, reshape, and concatenate dataframes.
     - example3.py: filtrer and group data, window functions. 
+    - example4.py and example5.py: exercises.
     
