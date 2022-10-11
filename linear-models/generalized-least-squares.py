@@ -22,9 +22,9 @@ Inputs
    `X: explatory variables (nobs x nfeat matrix).
    `y`: response variable (1D array).
    `intercept`: a constant should be added to the fitting (default: True)
+   `cov` : covariance matrix
 Outputs
     `beta`: coefficients
-    `beta0`: intercept
 """    
 def regression_generalized_least_squares_stm(X, y, cov, intercept = True):
     if intercept:     

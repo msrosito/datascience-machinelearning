@@ -64,7 +64,7 @@ def multiple_linear_regression_stm(X, y, intercept = True):
         R2 = MLR.rsquared
     else:
         MLR = sm.OLS(y, X).fit()
-        beta = np.concatenate((0., MLR.params))
+        beta = MLR.params
         R2 = MLR.rsquared        
     print(MLR.summary())
     return beta[0], beta, R2

@@ -1,5 +1,5 @@
 ################################################################################
-# Dimensionality reduction of a set of images using Principal Component Analysis
+# Dimensionality reduction of a set of galaxy images using Principal Component Analysis
 #
 # See: https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html#sklearn.decomposition.PCA.fit
 ################################################################################
@@ -41,7 +41,7 @@ def principal_components_skl(X, n_comp):
 Description
     Conversion of an image to a flat array of integers (0 to 255, grayscale)
 Input
-   `X`: image filename
+   `img_filename`: image filename
 Outputs
     `arr`: flat numpy array (height x width)
     `shape`: shape of the original image in pixels (height, width)
@@ -118,6 +118,3 @@ print('Porcentage of variance explained by each component: ')
 for i in range(n_comp):
     print('PC' + str(i + 1), ': ', np.round(ev[i], 3))
 print('Total explained variance using ', n_comp, ' components: ', np.sum(ev))
-
-exit()
-
