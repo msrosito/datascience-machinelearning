@@ -21,7 +21,8 @@ Current examples
     - K-means, DBSCAN, and HBSCAN comparison: times and plots using `scikit-learn`
 - Ensemble models
     - Binary classification with Random Forest.
-    - Binary classification with AdaBoost using decision trees
+    - Binary classification with AdaBoost using decision trees.
+    - Comparison between random forest, adaboost, and an ensemble formed by 3-nearest neighbors, logistic regression and decision tree.
 - SQL & DB design (MySQL examples)
     - example1.sql: subqueries, JOIN, GROUP BY, aggregation functions, filtrering, ORDER BY.
     - example2.sql: subqueries, GROUP BY, aggregation functions, filtrering.

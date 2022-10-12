@@ -98,10 +98,9 @@ nf = len(feature_names) - 1
 
 # Compute the boosted ensemble
 ne = 10
-f_importance, estimator_weights,pred_train_class, pred_train_prob, pred_test_class, pred_test_prob = adaboost_decisiontree_skl(ne,
+f_importance, estimator_weights, pred_train_class, pred_train_prob, pred_test_class, pred_test_prob = adaboost_decisiontree_skl(ne,
 X_train, y_train, X_test, y_test)
-
-print(estimator_weights)
+nest = len(estimator_weights[estimator_weights != 0])
 
 # Analysis
 M_train = skm.confusion_matrix(y_train, pred_train_class)
@@ -111,6 +110,7 @@ M_test = skm.confusion_matrix(y_test, pred_test_class)
 print('Feature importance: ')
 for i in range(nf):
     print(feature_names[i], str(round(f_importance[i], 3) * 100), '%')
+print('Number of weak learners: ', nest)
 print('Training set summary:')
 print(skm.classification_report(y_train, pred_train_class))
 print('Test set summary:')
