@@ -21,7 +21,7 @@ import statsmodels.api as sm
     multiple_linear_regression_skl(x, y, intercept = True):
 
 Description
-    Classic simple linear regression OLS using scikit learn
+    Classic multiple linear regression OLS using scikit learn
 Inputs
    `X`: explatory variables (nobs x nfeat matrix).
    `y`: response variable (1D array).
@@ -105,7 +105,7 @@ x, y = read_vars(filename)
 # Example with scikit learn ####################################################
 print('Multiple linear regression example (scikit learn)')
 
-# Compute simple linear regression
+# Compute multiple linear regression
 beta0, beta, R2 = multiple_linear_regression_skl(x, y)
 
 # Report results
@@ -116,6 +116,6 @@ print('R2: ', R2)
 # Example with statsmodel ######################################################
 print('Multiple linear regression example (statsmodel)')
 
-# Compute simple linear regression and report results
+# Compute multiple linear regression and report results
 beta0, beta, R2 = multiple_linear_regression_stm(x, y)
 
