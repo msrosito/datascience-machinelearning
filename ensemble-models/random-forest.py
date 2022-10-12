@@ -15,7 +15,7 @@ import pandas as pd
 ################################################################################
 
 """
-    random_forest_skl(n_estimators, max_samples, X_train, y_train, X_test = None, 
+    random_forest_classification_skl(n_estimators, max_samples, X_train, y_train, X_test = None, 
     y_test = None)
 
 Description
@@ -98,10 +98,10 @@ X_train, y_train, X_test, y_test = csv_to_train_and_test(data, 0.2) # test = 20 
 feature_names = data.columns
 nf = len(feature_names) - 1
 
-# Compute the decision tree
-n_trees = 10
-max_samples = 150
-f_importance, pred_train_class, pred_train_prob, pred_test_class, pred_test_prob, accuracy  = random_forest_classification_skl(10, 150, X_train, y_train, X_test, y_test)
+# Compute the decision trees
+nt = 10
+ms = 150
+f_importance, pred_train_class, pred_train_prob, pred_test_class, pred_test_prob, accuracy  = random_forest_classification_skl(nt, ms, X_train, y_train, X_test, y_test)
 
 # Analysis
 M_train = skm.confusion_matrix(y_train, pred_train_class)
