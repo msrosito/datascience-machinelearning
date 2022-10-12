@@ -8,6 +8,7 @@ Current examples
     - Simple and multiple regression using `scikit-learn` and `statsmodels` libraries.
     - Generalized linear model Poisson using `scikit-learn`.
     - Linear regression with correlated residuals. Generalized least squares using `statsmodels`.
+    - Comparison between a multiple linear regression and a decision tree using `scikit-learn`.
 - Classifiers
     - Evaluation of binary classifiers using `scikit-learn`.
     - Logistic regression using `scikit-learn`.
@@ -20,9 +21,10 @@ Current examples
 - Clustering
     - K-means, DBSCAN, and HBSCAN comparison: times and plots using `scikit-learn`
 - Ensemble models
-    - Binary classification with Random Forest.
-    - Binary classification with AdaBoost using decision trees.
+    - Binary classification with Random Forest using `scikit-learn`.
+    - Binary classification with AdaBoost using decision trees using `scikit-learn`.
     - Comparison between random forest, adaboost, and an ensemble formed by 3-nearest neighbors, logistic regression and decision tree.
+    - Regression using Random Forest using `scikit-learn`. Comparison with linear regression.
 - SQL & DB design (MySQL examples)
     - example1.sql: subqueries, JOIN, GROUP BY, aggregation functions, filtrering, ORDER BY.
     - example2.sql: subqueries, GROUP BY, aggregation functions, filtrering.
