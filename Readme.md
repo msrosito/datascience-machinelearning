@@ -19,6 +19,9 @@ Current examples
     - Comparison bewteen classificaiton of images reduced by PCA and UMAP algorithms.
 - Clustering
     - K-means, DBSCAN, and HBSCAN comparison: times and plots using `scikit-learn`
+- Ensemble models
+    - Binary classification with Random Forest.
+    - Binary classification with AdaBoost using decision trees.
 - SQL & DB design (MySQL examples)
     - example1.sql: subqueries, JOIN, GROUP BY, aggregation functions, filtrering, ORDER BY.
     - example2.sql: subqueries, GROUP BY, aggregation functions, filtrering.

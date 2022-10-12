@@ -146,7 +146,6 @@ print('Negative predicted value TN / (TN + FN): ', npv_te)
 print('Accuracy (TP + TN) / (TP + TN + FP + FN): ', acc_te)
 print('F1 Score: ', F1_te)
 
-
 # Plot
 fn = ['pregnant', 'glucose', 'pressure', 'triceps', 'insulin', 'mass',
 'pedigree', 'age']
