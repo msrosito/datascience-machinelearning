@@ -15,6 +15,7 @@ Current examples
     - Naive Bayes using `scikit-learn`.
     - Convolutional neural network using `tensorflow`. See [here](https://github.com/msrosito/deep-learning-galaxy)
     - Decision tree using `scikit-learn`. 
+    - Cross-validation and stratified cross-validation using `scikit-learn`.
 - Dimensionality reduction
     - Principal component analysis using `scikit-learn`.
     - Comparison bewteen classificaiton of images reduced by PCA and UMAP algorithms.

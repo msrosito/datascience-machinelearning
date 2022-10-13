@@ -2,7 +2,6 @@
 # Regression using Random Forest
 #
 # See: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
-# Dataset: https://github.com/rahul-raoniar/Rahul_Raoniar_Blogs
 ################################################################################
 
 from sklearn.ensemble import RandomForestRegressor 
