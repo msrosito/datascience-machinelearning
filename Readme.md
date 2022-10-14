@@ -13,7 +13,6 @@ Current examples
     - Evaluation of binary classifiers using `scikit-learn`.
     - Logistic regression using `scikit-learn`.
     - Naive Bayes using `scikit-learn`.
-    - Convolutional neural network using `tensorflow`. See [here](https://github.com/msrosito/deep-learning-galaxy)
     - Decision tree using `scikit-learn`. 
     - Cross-validation and stratified cross-validation using `scikit-learn`.
 - Dimensionality reduction
@@ -26,6 +25,9 @@ Current examples
     - Binary classification with AdaBoost using decision trees using `scikit-learn`.
     - Comparison between random forest, adaboost, and an ensemble formed by 3-nearest neighbors, logistic regression and decision tree.
     - Regression using Random Forest using `scikit-learn`. Comparison with linear regression.
+- Neural networks
+    - Convolutional neural network using `tensorflow`. See [here](https://github.com/msrosito/deep-learning-galaxy)
+    - Multilayer perceptron for the binary classification using `scikit-learn` and `tensorflow`
 - SQL & DB design (MySQL examples)
     - example1.sql: subqueries, JOIN, GROUP BY, aggregation functions, filtrering, ORDER BY.
     - example2.sql: subqueries, GROUP BY, aggregation functions, filtrering.
