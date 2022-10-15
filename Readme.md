@@ -8,6 +8,7 @@ Current examples
     - Simple and multiple regression using `scikit-learn` and `statsmodels` libraries.
     - Generalized linear model Poisson using `scikit-learn`.
     - Linear regression with correlated residuals. Generalized least squares using `statsmodels`.
+    - Regularization of linear models with L1 and L1 using `scikit-learn`.
     - Comparison between a multiple linear regression and a decision tree using `scikit-learn`.
 - Classifiers
     - Evaluation of binary classifiers using `scikit-learn`.
