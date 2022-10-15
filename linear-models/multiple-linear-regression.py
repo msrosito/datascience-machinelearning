@@ -23,7 +23,7 @@ import statsmodels.api as sm
 Description
     Classic multiple linear regression OLS using scikit learn
 Inputs
-   `X`: explatory variables (nobs x nfeat matrix).
+   `X`: explanatory variables (nobs x nfeat matrix).
    `y`: response variable (1D array).
    `intercept`: a constant should be added to the fitting (default: True)
 Outputs
@@ -48,7 +48,7 @@ def multiple_linear_regression_skl(X, y, intercept = True):
 Description
     Classic multiple linear regression OLS using statsmodels
 Inputs
-   `X: explatory variables (nobs x nfeat matrix).
+   `X: explanatory variables (nobs x nfeat matrix).
    `y`: response variable (1D array).
    `intercept`: a constant should be added to the fitting (default: True)
 Outputs

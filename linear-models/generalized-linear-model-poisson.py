@@ -22,7 +22,7 @@ Description
     Generalized linear model with Poisson distribution using scikit learn
     ln(mu) = beta0 + beta1 * x, y ~ Poisson(mu)
 Inputs
-   `x`: explatory variable (nobs x nfeat matrix).
+   `x`: explanatory variable (nobs x nfeat matrix).
    `y`: response variable (1D array).
    `intercept`: a constant should be added to the fitting (default: True)
 Outputs
@@ -67,7 +67,7 @@ def read_vars(filename):
 Description
     Scatter plot of the data + regression line of expected values of y
 Inputs
-   `x`: explatory variables
+   `x`: explanatory variable
    `y`: response variable
    `beta0`: intercept
    `beta1`: slope

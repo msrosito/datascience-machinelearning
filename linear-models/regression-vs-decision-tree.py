@@ -62,15 +62,15 @@ def decision_tree_regression_skl(X_train, y_train, X_test = None,
 '''
     plot_decision_tree(df, filename, title, feature_names = None, 
     class_names = None)
-    
-    Description:
+
+Description:
     Plot of a decision tree
-    Inputs
-        `df`: decision tree estimator
-        `filename`: filename of the plot
-        `title`: title for the plot
-        `features_names`: names of the features, optional
-        `class_names`: labels for the target variable, optional
+Inputs
+    `df`: decision tree estimator
+    `filename`: filename of the plot
+    `title`: title for the plot
+    `features_names`: names of the features, optional
+    `class_names`: labels for the target variable, optional
 '''
 def plot_decision_tree(df, filename, title):
     f = plt.figure()

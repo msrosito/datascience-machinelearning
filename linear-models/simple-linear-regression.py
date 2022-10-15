@@ -23,7 +23,7 @@ import statsmodels.api as sm
 Description
     Classic simple linear regression OLS using scikit learn
 Inputs
-   `x`: explatory variables (nobs x 1 matrix).
+   `x`: explanatory variables (nobs x 1 matrix).
    `y`: response variable (1D array).
    `intercept`: a constant should be added to the fitting (default: True)
 Outputs
@@ -48,7 +48,7 @@ def simple_linear_regression_skl(x, y, intercept = True):
 Description
     Classic simple linear regression OLS using statsmodels
 Inputs
-   `x`: explatory variables (nobs x 1 matrix).
+   `x`: explanatory variables (nobs x 1 matrix).
    `y`: response variable (1D array).
    `intercept`: a constant should be added to the fitting (default: True)
 Outputs
@@ -99,8 +99,8 @@ def read_vars(filename):
 Description
     Scatter plot of the data + regression line
 Inputs
-   `x`: explatory variables.
-   `y`: response variable.
+   `x`: explanatory variable
+   `y`: response variable
    `beta0`: intercept
    `beta1`: slope
    `label`: library used to compute the linear regression
