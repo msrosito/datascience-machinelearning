@@ -24,7 +24,7 @@ Inputs
    `X_train`: training features (ntrain x nfeatures matrix)
    `y_train`: labels of the true class of each observation (ntrain array)
    `X_test`: test set of features (ntest x nfeatures matrix), optional
-   `y_test`: test set of true labels (ntest x nfeatures matrix), optional
+   `y_test`: test set of true labels (ntest array), optional
 Outputs
     `decision_tree`: decision tree
     `depth`: tree depth

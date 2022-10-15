@@ -26,7 +26,7 @@ Inputs
    `X_train`: training features (ntrain x nfeatures matrix)
    `y_train`: labels of the true class of each observation (ntrain array)
    `X_test`: test set of features (ntest x nfeatures matrix), optional
-   `y_test`: test set of true labels (ntest x nfeatures matrix), optional
+   `y_test`: test set of true labels (ntest array), optional
    `intercept`: a constant should be added to the fitting (default: True)
 Outputs
     `coef`: coefficients
@@ -36,7 +36,7 @@ Outputs
     belong to each class (ntrain x nclasses)
     `pred_test_class`: predicted class for each test sample (ntest array)
     `pred_test_prob`: predicted probabilities for each test sample to
-    belong to each class (ntrain x nclasses)
+    belong to each class (ntest x nclasses)
     `accuracy`: mean accuracy on the test set  
 """   
 

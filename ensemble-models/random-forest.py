@@ -26,7 +26,7 @@ Inputs
    `X_train`: training features (ntrain x nfeatures matrix)
    `y_train`: labels of the true class of each observation (ntrain array)
    `X_test`: test set of features (ntest x nfeatures matrix), optional
-   `y_test`: test set of true labels (ntest x nfeatures matrix), optional
+   `y_test`: test set of true labels (ntest array), optional
 Outputs
     `f_importance`: impurity based features importance
     `pred_train_class`: predicted class for each training sample (ntrain array)
