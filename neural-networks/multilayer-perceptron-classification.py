@@ -13,7 +13,13 @@ from tensorflow.keras.layers import Flatten, Dense
 import numpy as np
 from PIL import Image, ImageOps
 import os
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
+
+
+################################################################################
+# Function definitions
+################################################################################
+ 
 
 """
     images_to_flat_array(img_filename):
@@ -82,20 +88,20 @@ def construct_galaxy_dataset(input_dir, size):
    
 Description
     Multilayer perceptron for classification using scikit-learn.
-    Loss function: log-loss. Using default parameters of MLPClassifier.
+    Loss function: log-loss. 
 Inputs
    `X_train`: training features (ntrain x nfeatures matrix)
    `y_train`: labels of the true class of each observation (ntrain array)
    `X_test`: test set of features (ntest x nfeatures matrix)
-   `y_test`: test set of true labels (ntest x nfeatures matrix)
-   `hls` : list containing the sizes of the hidden layers. 
+   `y_test`: test set of true labels (ntest array)
+   `hls` : list containing the sizes of the hidden layers 
    Default: 2 hidden layers with 100 neurons
 Outputs
     `pred_train_class`: predicted class for each training sample (ntrain array)
     `pred_test_class`: predicted class for each test sample (ntest array)
     `accuracy_train`: mean accucary for the training set
     `accuracy_test`: mean accucary for the test set
-    `loss_curve`: list reppresenting the loss function at each iteration       
+    `loss_curve`: list representing the loss function at each iteration       
 """    
 
 def multilayer_perceptron_classifier_skl(X_train, y_train, X_test, y_test, hls = None):
@@ -107,30 +113,31 @@ def multilayer_perceptron_classifier_skl(X_train, y_train, X_test, y_test, hls =
     accuracy_train = mpclass.score(X_train, y_train)
     accuracy_test = mpclass.score(X_test, y_test)
     loss_curve = mpclass.loss_curve_
+#    print(mpclass.out_activation_) # logistic
     return pred_train_class, pred_test_class, accuracy_train, accuracy_test, loss_curve
     
     
 """
    multilayer_perceptron_classifier_tf(X_train, y_train, X_test, y_test, hls)
 Description
-    Multilayer perceptron for classification using tensorflow.
+    Multilayer perceptron for classification using tensorflow
     Loss function: log-loss. 
 Inputs
    `X_train`: training features (ntrain x nfeatures matrix)
    `y_train`: labels of the true class of each observation (ntrain array)
    `X_test`: test set of features (ntest x nfeatures matrix)
-   `y_test`: test set of true labels (ntest x nfeatures matrix)
-   `hls` : list containing the sizes of the hidden layers. 
+   `y_test`: test set of true labels (ntest array)
+   `hls` : list containing the sizes of the hidden layers 
    Default: 2 hidden layers with 100 neurons
 Outputs
     `pred_train_class`: predicted probabities for each training sample (ntrain array)
     `pred_test_class`: predicted probabilities for each test sample (ntest array)
     `accuracy_train`: mean accucary for the training set
     `accuracy_test`: mean accucary for the test set
-    `loss_curve`: list reppresenting the loss function at each iteration   
+    `loss_curve`: list representing the loss function at each iteration   
     
 """    
-def multilayer_perceptron_classifier_tf(X_train, y_train, X_test, y_test, hls):
+def multilayer_perceptron_classifier_tf(X_train, y_train, X_test, y_test, hls = None):
     if hls == None:
         hls = [100, 100]
     input_size = len(X_train[0])
@@ -139,7 +146,7 @@ def multilayer_perceptron_classifier_tf(X_train, y_train, X_test, y_test, hls):
     model = Sequential(Flatten())
     for i in range(n_hidden_layers):
         model.add(Dense(int(hls[i]), activation = activation)) # hidden layers
-    model.add(Dense(1))
+    model.add(Dense(1, activation = 'sigmoid')) 
     model.compile(optimizer = 'adam', loss = tf.keras.losses.BinaryCrossentropy(from_logits = True),
     metrics = 'accuracy')
     history = model.fit(X_train, y_train, batch_size = min(input_size, 200), epochs =  200, validation_split = 0)
@@ -147,8 +154,8 @@ def multilayer_perceptron_classifier_tf(X_train, y_train, X_test, y_test, hls):
     loss_curve = history.history['loss']
     accuracy_train = model.evaluate(X_train, y_train)[1]
     accuracy_test = model.evaluate(X_test, y_test)[1]
-    pred_train_prob = np.exp(model.predict(X_train))
-    pred_test_prob = np.exp(model.predict(X_test))
+    pred_train_prob = model.predict(X_train)
+    pred_test_prob = model.predict(X_test)
     return pred_train_prob, pred_test_prob, accuracy_train, accuracy_test, loss_curve
 
                   
@@ -157,16 +164,16 @@ def multilayer_perceptron_classifier_tf(X_train, y_train, X_test, y_test, hls):
 Description
    Plot of the loss curve as a function of the iteration number
 Input
-    `output_dir`: output directory
     `loss_curve`: values of the loss curve for each iteration
+    `output_dir`: output directory
     `label': library used to perform the classification 
 """ 
    
 def plot_loss_curve(loss_curve, output_dir, label):
     n = len(loss_curve)
-    filename = output_dir + 'ml-perceptron-' + label + '.png'
+    filename = output_dir + 'bin-class-ml-perceptron-' + label + '.png'
     plt.plot(loss_curve, linewidth = 2)
-    plt.title('Multilayer perceptron training ' + label, fontsize = 15.5)
+    plt.title('Multilayer perceptron classifier training ' + label, fontsize = 15.5)
     plt.xlabel('Iteration', fontsize = 14)
     plt.ylabel('Loss', fontsize = 14)
     plt.text(n * 0.55, max(loss_curve) * 0.8, 'N of iterations: ' + str(n), fontsize = 13)
@@ -196,20 +203,20 @@ print('Number of iterations: ', len(loss_curve))
 print('Mean accuracy (training set): ', accuracy_train)
 print('Classification summary (training set):')
 print(skm.classification_report(y_train, pred_train_class))
-print('Mean accuracy (training set): ', accuracy_train)
+print('Mean accuracy (test set): ', accuracy_test)
 print('Classification summary (test set):')
 print(skm.classification_report(y_test, pred_test_class))
 # Plot loss curve
 plot_loss_curve(loss_curve, output_dir, 'scikit-learn')
 
-# Example using scikit learn
+# Example using tensorflow
 print('\n Multilayer perceptron binary classification (tensorflow)')
 # Perform classification and report the model summary
-pred_train_class, pred_test_class, accuracy_train, accuracy_test, loss_curve = multilayer_perceptron_classifier_tf(X_train, 
+pred_train_prob, pred_test_prob, accuracy_train, accuracy_test, loss_curve = multilayer_perceptron_classifier_tf(X_train, 
 y_train, X_test, y_test, [15, 15])
 # Report results
 print('Number of iterations: ', len(loss_curve))
 print('Mean accuracy (training set): ', accuracy_train)
-print('Mean accuracy (training set): ', accuracy_test)
+print('Mean accuracy (test set): ', accuracy_test)
 # Plot loss curve
-plot_loss_curve(loss_curve, output_dir, 'tensorflow')  
+plot_loss_curve(loss_curve, output_dir, 'tensorflow')

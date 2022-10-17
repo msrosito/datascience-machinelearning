@@ -27,8 +27,9 @@ Current examples
     - Comparison between random forest, adaboost, and an ensemble formed by 3-nearest neighbors, logistic regression and decision tree.
     - Regression using Random Forest using `scikit-learn`. Comparison with linear regression.
 - Neural networks
-    - Convolutional neural network using `tensorflow`. See [here](https://github.com/msrosito/deep-learning-galaxy)
-    - Multilayer perceptron for the binary classification using `scikit-learn` and `tensorflow`
+    - Convolutional neural network using `tensorflow`. See [here](https://github.com/msrosito/deep-learning-galaxy).
+    - Multilayer perceptron for the binary classification using `scikit-learn` and `tensorflow`.
+    - Multilayer perceptron for vectorial function fitting using `scikit-learn` and `tensorflow`.
 - SQL & DB design (MySQL examples)
     - example1.sql: subqueries, JOIN, GROUP BY, aggregation functions, filtrering, ORDER BY.
     - example2.sql: subqueries, GROUP BY, aggregation functions, filtrering.
