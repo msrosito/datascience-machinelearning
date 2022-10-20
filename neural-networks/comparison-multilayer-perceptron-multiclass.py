@@ -32,10 +32,13 @@ Inputs:
    `hls` : list containing the sizes of the hidden layers 
    Default: 2 hidden layers with 100 neurons
 Outputs:   
-    `best_params`: parameters that gave the best results
+    `best_params`: parameters of the model that gave the best results
     `best_score`: mean cross-validated score (mean accuracy) of the best_estimator
     `results`: dictionary containing a summary for each set of parameters
-    `final_test_score`: mean accucary for the test set
+    `final_train_score`: mean accucary for the training set after 
+    refitting using the best parameters
+    `final_test_score`: mean accucary for the test set after 
+    refitting using the best parameters
 """
 
 def comparison_of_classifiers(X_train, y_train, X_test, y_test, activation_list, 
@@ -49,8 +52,9 @@ def comparison_of_classifiers(X_train, y_train, X_test, y_test, activation_list,
     best_params = grid.best_params_
     best_score = grid.best_score_
     results = grid.cv_results_
+    final_train_score = grid.score(X_train, y_train)
     final_test_score = grid.score(X_test, y_test)
-    return best_params, best_score, results, final_test_score
+    return best_params, best_score, results, final_train_score, final_test_score
 
 
 ################################################################################
@@ -64,13 +68,14 @@ y = iris['target'] # 3 classes
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 0, test_size = 0.3)
 
 # Classification using different solvers and activation functions
-best_params, best_score, results, final_test_score = comparison_of_classifiers(X_train, y_train, 
+best_params, best_score, results, final_train_score, final_test_score = comparison_of_classifiers(X_train, y_train, 
 X_test, y_test, activation_list = ['identity', 'logistic'], solver_list = ['lbfgs', 'adam', 'sgd'], hls = [10, 10])
 
 # Report results
 print('Activation function of the best model: ', best_params['activation'])
 print('Solver of the best model: ', best_params['solver'])
 print('Best training score: ', best_score)
+print('Best training score after refitting: ', final_train_score)
 print('Best test score: ', final_test_score)
 print('Mean scores for each set of parameters:')
 for i, par in enumerate(results['params']):
