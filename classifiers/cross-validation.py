@@ -39,8 +39,8 @@ def cross_validation_split_analysis(X, y, class_names, k, stratified = False):
         n_test = len(y_test)
         npos_train = len(y_train[y_train == 'pos'])
         npos_test = len(y_test[y_test == 'pos'])
-        print('Postives in the training set: ' , round(npos_train / 392 * 100., 2), '% of a total of ', n_train)  
-        print('Postives in the test set: ' , round(npos_test / 392 * 100., 2), '% of a total of ', n_test)
+        print('Positives in the training set: ' , round(npos_train / 392 * 100., 2), '% of a total of ', n_train)  
+        print('Positives in the test set: ' , round(npos_test / 392 * 100., 2), '% of a total of ', n_test)
                 
 
 ################################################################################
