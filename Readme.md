@@ -31,6 +31,8 @@ Current examples
     - Multilayer perceptron for the binary classification using `scikit-learn` and `tensorflow`.
     - Multilayer perceptron for vectorial function fitting using `scikit-learn` and `tensorflow`.
     - Selection of the best multilayer perceptron varying hyperparameters for multiclass classification.
+- Time series
+    - Time series regression.
 - SQL & DB design (MySQL examples)
     - example1.sql: subqueries, JOIN, GROUP BY, aggregation functions, filtrering, ORDER BY.
     - example2.sql: subqueries, GROUP BY, aggregation functions, filtrering.
