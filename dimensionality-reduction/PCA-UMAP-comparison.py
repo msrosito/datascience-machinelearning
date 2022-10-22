@@ -45,7 +45,7 @@ def principal_components_skl(X, n_comp):
 Description
     Conversion of an image to a flat array of integers (0 to 255, grayscale)
 Input
-   `X`: image filename
+   `img_filename`: image filename
 Outputs
     `arr`: flat numpy array (height x width)
     `shape`: shape of the original image in pixels (height, width)
