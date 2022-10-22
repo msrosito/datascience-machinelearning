@@ -4,6 +4,10 @@ This repository contains basic python code examples about different methods of d
 
 Current examples
 
+- Data preparation
+    - Missing values: simple and k-nearest neighbors imputation, row removal
+    - Data preprocessing and outliers: centering, standarizing, normalization, robust scaling, winsorization
+    - Examples
 - Linear models
     - Simple and multiple regression using `scikit-learn` and `statsmodels` libraries.
     - Generalized linear model Poisson using `scikit-learn`.
