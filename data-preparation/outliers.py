@@ -54,7 +54,7 @@ def create_outliers(array, n_low, n_high):
 Description
     Displays the mean, standard deviation, median, and IQR of a given array
     IQR is defined as quantile_sup - quantile_inf.
-    If quantile_sup = Q3 and quantile_inf =  Q1, IQR depicts the interquartile range.
+    If quantile_sup = 0.75 and quantile_inf =  0.25, IQR depicts the interquartile range.
 Inputs
     `array`: 1D numpy array
     `quantile_inf`: lower limit for IQR

@@ -5,9 +5,10 @@ This repository contains basic python code examples about different methods of d
 Current examples
 
 ## Data preparation
-    - Missing values: simple and k-nearest neighbors imputation, row removal
-    - Data preprocessing and outliers: centering, standarizing, normalization, robust scaling, winsorization
-    - Examples
+    - Missing values: simple and k-nearest neighbors imputation (`scikit-learn`), row removal.
+    - Data preprocessing and outliers (`scikit-learn` and `scipy.stats`): centering, standarizing, normalization, robust scaling, winsorization.
+    - Log-transformations and Box-Cox (`scipy.stats`) transformation to deal with outliers.
+    - Examples.
     
 ## Linear models
     - Simple and multiple regression using `scikit-learn` and `statsmodels` libraries.
@@ -42,7 +43,7 @@ Current examples
     - Selection of the best multilayer perceptron varying hyperparameters for multiclass classification.
     
 ## Time series
-    - Time series regression.
+    - Time series regression using `scikit-learn`.
     
 ## SQL & DB design (MySQL examples)
     - example1.sql: subqueries, JOIN, GROUP BY, aggregation functions, filtrering, ORDER BY.
