@@ -95,6 +95,7 @@ Outputs:
     refitting using the best parameters
 """
 
+
 def comparison_of_RFs(X_train, y_train, X_test, y_test, n_trees, max_features, max_depth):
     params = {'n_estimators' : n_trees, 'max_features' : max_features, 'max_depth' : max_depth}
     estimator = RandomForestRegressor(random_state = 0)
