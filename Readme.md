@@ -9,6 +9,7 @@ Current examples
     - Data preprocessing and outliers (`scikit-learn` and `scipy.stats`): centering, standarizing, normalization, robust scaling, winsorization.
     - Log-transformations and Box-Cox (`scipy.stats`) transformation to deal with outliers.
     - Examples.
+    - Plots: 2D plots (scatter, lines, heatmaps), 3D plots (scatter), histograms.
     
 ## Linear models
     - Simple and multiple regression using `scikit-learn` and `statsmodels` libraries.
