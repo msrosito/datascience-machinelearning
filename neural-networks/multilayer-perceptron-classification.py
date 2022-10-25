@@ -2,6 +2,8 @@
 # Multilayer perceptron for the binary classification of galaxy images
 #
 # See: https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier
+#      https://www.tensorflow.org/api_docs/python/tf/keras/layers
+#      https://www.tensorflow.org/api_docs/python/tf/keras/models
 ################################################################################
 
 from sklearn.neural_network import MLPClassifier
@@ -23,7 +25,6 @@ import matplotlib.pyplot as plt
 
 """
     images_to_flat_array(img_filename):
-
 Description
     Conversion of an image to a flat array of integers (0 to 255, grayscale)
 Input
@@ -44,7 +45,6 @@ def images_to_flat_array(img_filename):
     
 """
     construct_galaxy_dataset(input_dir, size)
-
 Description
     Construct the arrays of features and labels for the full galaxy dataset 
 Inputs
@@ -55,7 +55,6 @@ Outputs
     `X_feat`: numpy matrix of flattened images of the galaxies 
     (n_non-ellipticals + n_ellpiticals, size)
     `y_label`: label of each sample (1 if elliptical, 0 otherwise)
-
 """        
     
 def construct_galaxy_dataset(input_dir, size):
@@ -84,14 +83,13 @@ def construct_galaxy_dataset(input_dir, size):
 
 
 """
-   multilayer_perceptron_classifier_skl(X_train, y_train, X_test, y_test, hls
-   
+   multilayer_perceptron_classifier_skl(X_train, y_train, X_test, y_test, hls   
 Description
-    Multilayer perceptron for classification using scikit-learn.
-    Loss function: log-loss. 
+    Multilayer perceptron for classification using scikit-learn
+    Loss function: log-loss 
 Inputs
-   `X_train`: training features (ntrain x nfeatures matrix)
-   `y_train`: labels of the true class of each observation (ntrain array)
+   `X_train`: training set of features (ntrain x nfeatures matrix)
+   `y_train`: training set of true labels (ntrain array)
    `X_test`: test set of features (ntest x nfeatures matrix)
    `y_test`: test set of true labels (ntest array)
    `hls` : list containing the sizes of the hidden layers 
@@ -124,7 +122,7 @@ Description
     Loss function: log-loss. 
 Inputs
    `X_train`: training features (ntrain x nfeatures matrix)
-   `y_train`: labels of the true class of each observation (ntrain array)
+   `y_train`: training set of true labels (ntest array)
    `X_test`: test set of features (ntest x nfeatures matrix)
    `y_test`: test set of true labels (ntest array)
    `hls` : list containing the sizes of the hidden layers 
@@ -188,6 +186,8 @@ def plot_loss_curve(loss_curve, output_dir, label):
 output_dir = 'resultsNN/'
 input_dir = '../data/Fenix_galaxy_images/'
 image_size = 3072
+tf.keras.utils.set_random_seed(3)
+
 
 # Read the data and construct the training and test datasets
 X, y = construct_galaxy_dataset(input_dir, image_size)
@@ -218,5 +218,6 @@ y_train, X_test, y_test, [15, 15])
 print('Number of iterations: ', len(loss_curve))
 print('Mean accuracy (training set): ', accuracy_train)
 print('Mean accuracy (test set): ', accuracy_test)
+print(pred_train_prob)
 # Plot loss curve
 plot_loss_curve(loss_curve, output_dir, 'tensorflow')

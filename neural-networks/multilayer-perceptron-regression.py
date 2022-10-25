@@ -2,6 +2,8 @@
 # Multilayer perceptron for vectorial function fitting
 #
 # See: https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html#sklearn.neural_network.MLPRegressor
+#      https://www.tensorflow.org/api_docs/python/tf/keras/layers
+#      https://www.tensorflow.org/api_docs/python/tf/keras/models
 ################################################################################
 
 from sklearn.neural_network import MLPRegressor
@@ -166,6 +168,7 @@ def plot_two_curves(train_curve, val_curve, output_dir, label, plot):
 
 input_dir = '../data/'
 output_dir = 'resultsNN/'
+tf.keras.utils.set_random_seed(3)
 
 # Read the data and construct the training and test datasets
 data = pd.read_csv(input_dir + 'data_example_func.csv')

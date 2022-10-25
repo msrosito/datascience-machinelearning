@@ -23,6 +23,7 @@ Current examples
     - Naive Bayes using `scikit-learn`.
     - Decision tree using `scikit-learn`. 
     - Cross-validation and stratified cross-validation using `scikit-learn`.
+    
 ## Dimensionality reduction
     - Principal component analysis using `scikit-learn`.
     - Comparison bewteen classificaiton of images reduced by PCA and UMAP algorithms.
@@ -37,10 +38,11 @@ Current examples
     - Regression using Random Forest using `scikit-learn`. Comparison with linear regression.
     
 ## Neural networks
-    - Convolutional neural network using `tensorflow`. See [here](https://github.com/msrosito/deep-learning-galaxy).
+    - Convolutional neural network using `tensorflow`. See also [here](https://github.com/msrosito/deep-learning-galaxy).
     - Multilayer perceptron for the binary classification using `scikit-learn` and `tensorflow`.
     - Multilayer perceptron for vectorial function fitting using `scikit-learn` and `tensorflow`.
-    - Selection of the best multilayer perceptron varying hyperparameters for multiclass classification.
+    - Selection of the best multilayer perceptron varying hyperparameters for multiclass classification using `scikit-learn`.
+    - Dropout regularization on multilayer perceptron for multiclass classification using `tensorflow`.
     
 ## Time series
     - Time series regression using `scikit-learn`.
