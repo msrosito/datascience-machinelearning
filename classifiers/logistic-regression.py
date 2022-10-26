@@ -42,7 +42,7 @@ Outputs
 
 def logistic_regression_fit_and_predict_skl(X_train, y_train, X_test = None, 
     y_test = None, intercept = True):
-    logreg_fit = lm.LogisticRegression(fit_intercept = intercept).fit(X_train,y_train)
+    logreg_fit = lm.LogisticRegression(fit_intercept = intercept, max_iter = 300).fit(X_train,y_train)
     coef = logreg_fit.coef_
     inter = logreg_fit.intercept_
     pred_train_class = logreg_fit.predict(X_train)

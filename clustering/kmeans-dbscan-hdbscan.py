@@ -7,13 +7,9 @@
 ################################################################################
 
 import time
-import warnings
-
 import numpy as np
 import matplotlib.pyplot as plt
-#import matplotlib as mpl
 from matplotlib import colors
-
 from sklearn.cluster import DBSCAN, KMeans
 import hdbscan
 
@@ -22,10 +18,10 @@ import hdbscan
 ################################################################################
 
 """
-    plot_clusters(x, y, l):
+    plot_clusters(x, y, l, algorithm, output_dir)
 
 Description
-    2D scatter plot of the data colored according the clustering
+    2D scatter plot of the data colored according to the clustering
 Inputs
    `x`: x-coordinate
    `y`: y-coordinate
@@ -60,28 +56,20 @@ output_dir = 'results-clustering/'
 filename = input_dir + '2D-proj.txt'
 
 # Read the projection coordinates
-
 projection = np.loadtxt(filename)
 x = projection[:, 0]
 y = projection[:, 1]
 
 # Plot
-
 plt.plot(x, y, linewidth = 0, marker = 'o', markersize = 3)
 plt.xlabel("x", fontsize = 14)
-plt.ylabel("x", fontsize = 14)
+plt.ylabel("y", fontsize = 14)
 plt.title('Unclustered data', fontsize = 15)
 plt.savefig(output_dir + 'unclustered.png')
 plt.close()
 
-# HDBSCAN parameters
-
-nn = 70 
-ms =  1 
-mcs = 70
-md = 0
-
 # Example of clustering using HDBSCAN ##########################################
+
 print('Clustering using HDBSCAN')
 
 # Compute clustering
@@ -103,6 +91,7 @@ print('Time: ', t1 - t0)
 plot_clusters(x, y, l, 'HDBSCAN', output_dir)
 
 # Example of clustering using DBSCAN ##########################################
+
 print('Clustering using DBSCAN')
 
 # Compute clustering
@@ -124,9 +113,10 @@ print('Time: ', t1 - t0)
 plot_clusters(x, y, l, 'DBSCAN', output_dir)
 
 # Example of clustering using k-means ##########################################
+
 print('Clustering using k-means')
 
-# Compute clustering with the same number of  clusters than HDBSCAN
+# Compute clustering with the same number of clusters than HDBSCAN
 t0 = time.time()
 clusters = KMeans(Nc_h).fit(projection)
 t1 = time.time()
