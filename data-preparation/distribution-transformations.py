@@ -2,7 +2,6 @@
 # Transformation of skewed data
 #
 # See: https://scikit-learn.org/stable/modules/preprocessing.html
-#      https://scikit-learn.org/stable/modules/impute.html
 #      https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mstats.winsorize.html
 ################################################################################
 
@@ -23,7 +22,7 @@ Inputs
     `data_before`: array containing skewed data
     `data_after`: transformed array
     `output_dir`: output directory
-    `label`: 'right-skewed', 'right-skewed', 'non-gaussian-right', 'non-gaussian-left'
+    `label`: 'right-skewed', 'left-skewed', 'non-gaussian-right', 'non-gaussian-left'
     Choose non-gaussian if Box-Cox transformation was used
 """
 

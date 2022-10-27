@@ -57,7 +57,7 @@ dfm = generate_missing_values(df, n)
 df_remove = dfm[(dfm != missing_value).all(axis = 1)].reset_index()
 
 # Impute values using the mean of each column
-df_simple, mask = dp.simple_imputatior_skl(dfm, 'mean', missing_value)
+df_simple, mask = dp.simple_imputation_skl(dfm, 'mean', missing_value)
 
 # Impute values using the mean of each column
 k = 5 # number of nearest neighbors

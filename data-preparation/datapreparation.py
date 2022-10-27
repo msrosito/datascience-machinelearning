@@ -16,7 +16,7 @@ import pandas as pd
 ################################################################################
 
 """
-    simple_imputatior_skl(X, strategy)
+    simple_imputation_skl(X, strategy)
 Description
      Missing values imputation using mean, median, most_frequent, constant
 Inputs
@@ -29,7 +29,7 @@ Outputs
     `mask`: boolean matrix indicating missing values
 """
  
-def simple_imputatior_skl(data, strategy, missing_value):
+def simple_imputation_skl(data, strategy, missing_value):
     mask = imp.MissingIndicator(missing_values = missing_value).fit_transform(data)
     dataf = imp.SimpleImputer(missing_values = missing_value, strategy = strategy).fit_transform(data)
     dataf = pd.DataFrame(dataf)
