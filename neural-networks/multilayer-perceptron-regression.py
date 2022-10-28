@@ -48,7 +48,7 @@ def multilayer_perceptron_regressor_skl(X_train, y_train, X_test, y_test, hls = 
     if hls == None:
         hls = [100, 100]
     mpreg = MLPRegressor(hidden_layer_sizes = hls, validation_fraction = 0.15, 
-    early_stopping = True, tol = 0.001, random_state = 0).fit(X_train, y_train)
+    early_stopping = True, tol = 0.001, random_state = 0, max_iter = 300).fit(X_train, y_train)
     pred_train = mpreg.predict(X_train)
     pred_test = mpreg.predict(X_test)
     R2_train = mpreg.score(X_train, y_train)

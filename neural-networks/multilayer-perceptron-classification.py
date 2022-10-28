@@ -105,7 +105,7 @@ Outputs
 def multilayer_perceptron_classifier_skl(X_train, y_train, X_test, y_test, hls = None):
     if hls == None:
         hls = [100, 100]
-    mpclass = MLPClassifier(hidden_layer_sizes = hls, random_state = 0).fit(X_train, y_train)
+    mpclass = MLPClassifier(hidden_layer_sizes = hls, random_state = 0, max_iter = 300).fit(X_train, y_train)
     pred_train_class = mpclass.predict(X_train)
     pred_test_class = mpclass.predict(X_test)
     accuracy_train = mpclass.score(X_train, y_train)
@@ -218,6 +218,5 @@ y_train, X_test, y_test, [15, 15])
 print('Number of iterations: ', len(loss_curve))
 print('Mean accuracy (training set): ', accuracy_train)
 print('Mean accuracy (test set): ', accuracy_test)
-print(pred_train_prob)
 # Plot loss curve
 plot_loss_curve(loss_curve, output_dir, 'tensorflow')
