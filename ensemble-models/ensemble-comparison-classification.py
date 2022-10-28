@@ -129,7 +129,7 @@ def myensemble_skl(X_train, y_train, X_test, y_test):
     print('Second classifier')
     print(skm.classification_report(y_train, dtc.predict(X_train)))
     # third classifier
-    lr = lm.LogisticRegression().fit(X_train,y_train)
+    lr = lm.LogisticRegression(max_iter = 300).fit(X_train,y_train)
     print('Third classifier')
     print(skm.classification_report(y_train, lr.predict(X_train))) # ver en que falla cada una
     # predictions
